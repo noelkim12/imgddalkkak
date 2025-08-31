@@ -30,9 +30,9 @@ class BackgroundRemover:
     def __init__(self):
         self.root = TkinterDnD.Tk()
         self.root.title("이미지 딸깍툴")
-        self.root.geometry("700x1115")
+        self.root.geometry("700x1000")
         self.root.resizable(True, True)
-        self.root.minsize(650, 1115)
+        self.root.minsize(700, 1000)
         
         # 모던 테마 색상
         self.colors = {
@@ -189,11 +189,11 @@ class BackgroundRemover:
         
         # 폴더 선택 카드
         folder_card = tk.Frame(scrollable_frame, bg=self.colors['card'], relief='flat', bd=0)
-        folder_card.pack(fill='x', pady=(10, 15), padx=10)
+        folder_card.pack(fill='x', pady=(5, 10), padx=10)
         
         # 폴더 선택 제목
         folder_title_frame = tk.Frame(folder_card, bg=self.colors['card'])
-        folder_title_frame.pack(fill='x', padx=20, pady=(20, 10))
+        folder_title_frame.pack(fill='x', padx=15, pady=(15, 8))
         
         tk.Label(
             folder_title_frame, 
@@ -209,9 +209,9 @@ class BackgroundRemover:
             bg=self.colors['light'], 
             relief='solid', 
             bd=2,
-            height=80
+            height=60
         )
-        self.drop_frame.pack(fill='x', padx=20, pady=(0, 15))
+        self.drop_frame.pack(fill='x', padx=15, pady=(0, 10))
         self.drop_frame.pack_propagate(False)
         
         # 드롭 존 설정 (드래그 앤 드롭 라이브러리가 있을 때만)
@@ -363,11 +363,11 @@ class BackgroundRemover:
         
         # rembg 설정 카드
         rembg_card = tk.Frame(scrollable_frame, bg=self.colors['card'], relief='flat', bd=0)
-        rembg_card.pack(fill='x', pady=(0, 15), padx=10)
+        rembg_card.pack(fill='x', pady=(0, 10), padx=10)
         
         # rembg 제목
         rembg_title_frame = tk.Frame(rembg_card, bg=self.colors['card'])
-        rembg_title_frame.pack(fill='x', padx=20, pady=(20, 10))
+        rembg_title_frame.pack(fill='x', padx=15, pady=(15, 8))
         
         tk.Label(
             rembg_title_frame, 
@@ -379,7 +379,7 @@ class BackgroundRemover:
         
         # 모델 선택
         model_frame = tk.Frame(rembg_card, bg=self.colors['card'])
-        model_frame.pack(fill='x', padx=20, pady=(0, 15))
+        model_frame.pack(fill='x', padx=15, pady=(0, 10))
         
         tk.Label(
             model_frame, 
@@ -414,7 +414,7 @@ class BackgroundRemover:
         
         # Alpha Matting 설정
         alpha_frame = tk.Frame(rembg_card, bg=self.colors['card'])
-        alpha_frame.pack(fill='x', padx=20, pady=(0, 20))
+        alpha_frame.pack(fill='x', padx=15, pady=(0, 15))
         
         # Alpha Matting 상태에 따른 텍스트 및 색상 설정
         if self.alpha_matting_available:
@@ -444,7 +444,7 @@ class BackgroundRemover:
         
         # Alpha Matting 상세 설정
         self.alpha_options_frame = tk.Frame(alpha_frame, bg=self.colors['card'])
-        self.alpha_options_frame.pack(fill='x', padx=20)
+        self.alpha_options_frame.pack(fill='x', padx=15)
         
         # 임계값 설정들
         alpha_settings = [
@@ -486,11 +486,11 @@ class BackgroundRemover:
         
         # 로그 및 진행률 카드
         log_card = tk.Frame(scrollable_frame, bg=self.colors['card'], relief='flat', bd=0)
-        log_card.pack(fill='both', expand=True, pady=(0, 15), padx=10)
+        log_card.pack(fill='both', expand=True, pady=(0, 10), padx=10)
         
         # 진행률
         progress_frame = tk.Frame(log_card, bg=self.colors['card'])
-        progress_frame.pack(fill='x', padx=20, pady=(20, 10))
+        progress_frame.pack(fill='x', padx=15, pady=(15, 8))
         
         tk.Label(progress_frame, text="⏳ 진행률:", font=("맑은 고딕", 10, "bold"), 
                 bg=self.colors['card']).pack(anchor='w')
@@ -504,12 +504,12 @@ class BackgroundRemover:
         
         # 로그
         tk.Label(log_card, text="📋 처리 로그:", font=("맑은 고딕", 10, "bold"), 
-                bg=self.colors['card']).pack(anchor='w', padx=20)
+                bg=self.colors['card']).pack(anchor='w', padx=15)
         
         log_frame = tk.Frame(log_card, bg=self.colors['card'])
-        log_frame.pack(fill='both', expand=True, padx=20, pady=(0, 20))
+        log_frame.pack(fill='both', expand=True, padx=15, pady=(0, 15))
         
-        self.log_text = tk.Text(log_frame, height=6, bg=self.colors['light'])
+        self.log_text = tk.Text(log_frame, height=5, bg=self.colors['light'])
         log_scrollbar = tk.Scrollbar(log_frame, command=self.log_text.yview)
         self.log_text.configure(yscrollcommand=log_scrollbar.set)
         
@@ -518,7 +518,7 @@ class BackgroundRemover:
         
         # 버튼
         button_frame = tk.Frame(log_card, bg=self.colors['card'])
-        button_frame.pack(pady=20)
+        button_frame.pack(pady=15)
         
         self.start_btn = tk.Button(
             button_frame,

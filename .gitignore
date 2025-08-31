@@ -1,0 +1,6 @@
+animation/
+transparent/
+__pycache__/
+.DS_Store
+.venv/
+.git/

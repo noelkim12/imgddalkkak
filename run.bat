@@ -46,4 +46,4 @@ echo.
 
 python "%~dp0remove_bg.py"
 
-REM GUI 창이 닫히면 자동으로 bat 프로세스도 종료
+REM Automatically close batch process when GUI window is closed
