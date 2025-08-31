@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(remove_bg.bat)",
+      "Read(d:\\dev\\godot\\asset\\removebg/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
