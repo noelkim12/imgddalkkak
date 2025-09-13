@@ -271,6 +271,6 @@ pip install pymatting opencv-python scipy
 버그 리포트나 기능 제안은 언제든 환영합니다!
 
 ---
-**개발자**: 클로드 코드님이 작성해주고 Noel Kim이 감히 검수함 
+**개발자**: Noel Kim
 **버전**: 1.0  
 **최종 업데이트**: 2025년 8월
